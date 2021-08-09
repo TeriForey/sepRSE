@@ -1,0 +1,39 @@
+{% spaceless %}
+{% load static %}{% load i18n %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/ico" href="{% static "images/favicon.ico" %}"/>
+    <title>{% block title %}{% endblock title %}SeptembRSE Django</title>
+    <link href="{% static 'custom.css' %}" rel="stylesheet" >
+    <script src="{% static 'custom.js' %}"></script>
+    <script src="https://kit.fontawesome.com/8a35fb449d.js" crossorigin="anonymous"></script>
+    {% block extra_css %}{% endblock extra_css %}
+  </head>
+  <body>
+
+    {% include 'snippets/base_menu.html' %}
+
+    {% if messages %}
+      <div class="container">
+        {% for message in messages %}
+          <div class="alert {{ message.tags }}">
+            <p>{{ message }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="container my-5">
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+    <script src="{% static 'index.js' %}"></script>
+    {% block extra_script %}{% endblock %}
+  </body>
+</html>
+{% endspaceless %}

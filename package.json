@@ -1,0 +1,19 @@
+{
+  "name": "seprse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "parcel watch assets/index.js assets/custom.scss -d static",
+    "build": "parcel build assets/index.js assets/custom.scss -d static"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.1.0",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.37.5"
+  }
+}
